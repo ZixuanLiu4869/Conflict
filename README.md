@@ -16,7 +16,7 @@ Train the base policy model using supervised fine-tuning:
 
 ```bash
 python sft.py
-
+```
 
 
 
@@ -25,13 +25,13 @@ Train a proxy reward model on preference data:
 
 ```bash
 python reward_trainer.py
-
+```
 ### 3. Identify Conflict Examples
 Sample responses and compute reward-policy conflict metrics (nRPCS and Kendall-Tau):
 
 ```bash
 python sample.py
-
+```
 
 ### 4. Train Refined Reward Model
 
@@ -39,16 +39,16 @@ Retrain the reward model using feedback collected on conflict examples:
 
 ```bash
 python reward_trainer_refined.py
-
+```
 ### 5. RM-Based Policy Fine-Tuning (PPO)
 Train the refined base policy using PPO with the refined proxy reward model:
 
 ```bash
 python ppo.py
-
+```
 ### 6. Final Evaluation
 
 Sample responses using the refined model and evaluate using a high-quality gold reward model:
 ```bash
 python sample_gold_reward.py && python evaluation.py
-
+```
